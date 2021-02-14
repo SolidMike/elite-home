@@ -1,0 +1,31 @@
+.c-button {
+  cursor: pointer;
+  display: inline-block;
+  min-width: 250px;
+  text-decoration: none;
+  color: $black;
+  padding: 1.1rem 4.5rem;
+  font-weight: 800;
+  background-color: #E7E7E7;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.7) 50.52%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset 0px -18px 34px rgba(37, 37, 37, 0.5);
+  &:active {
+    transform: translateY(1px);
+  }
+  &__size_md {
+    max-width: 300px;
+    width: 100%;
+  }
+  &_square {
+    background-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+    text-align: left;
+    background-color: #B6B6B6;
+  }
+  &_type_cat {
+    color: #3E2F0F;
+    align-self: center;
+  }
+}

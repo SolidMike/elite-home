@@ -1,0 +1,163 @@
+extends template/secondary
+
+block variables
+    - var title = 'Каталог'
+    - var pageClass = 'catalogPage'
+
+block content
+    .section.fp-auto-height
+        .section__wrapper
+            .section__aside-title Каталог
+            .section__container
+                ul.breadcrumbs
+                    +breadcrumbs-item('Главная','/')
+                    +breadcrumbs-item('Мягкая мебель')
+                .section__content.section__content_transparent
+                    .title Мягкая мебель
+                    -
+                        const buttonTypeOrder = {
+                            label: 'Заказать',
+                            href: '#form-modal',
+                            size: 'size_md',
+                            skin: 'type_cat modal-btn'
+                        }
+                        const productCard = [{
+                                href: '#',
+                                img: './static/images/content/product-img-1.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-2.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-3.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-1.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-2.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-3.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-1.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-2.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-3.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-1.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-2.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-3.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-1.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-2.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                            {
+                                href: '#',
+                                img: './static/images/content/product-img-3.jpg',
+                                title: 'Заголовок товара',
+                                descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
+                                price: '50 000 ₽',
+                                buttonType: buttonTypeOrder
+
+                            },
+                        ]
+                    .cards-grid
+                        .bg-elem.bg-elem_type_cat
+                        each obj in productCard
+                            +card(obj)
+                +pagination(5, 3, 4, 9, arrows)

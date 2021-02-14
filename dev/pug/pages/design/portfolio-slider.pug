@@ -1,0 +1,88 @@
+.section.portfolio
+    .section__wrapper.section__wrapper_bg_grey
+        .section__aside-title.section__aside-title_right Примеры наших работ
+        .section__container
+            .section__content.section__content_transparent
+                .title Примеры наших работ
+                .swiper-container.portfolio-slider
+                    .swiper-wrapper
+                        -
+                            const portfolioSlides = [{
+                                img: './static/images/content/portfolio-img-1.jpg',
+                                items: [
+                                    {
+                                        icon: 'marker',
+                                        text: 'г. Донецк ул. Пролетарская 71а',
+                                    },
+                                    {
+                                        icon: 'square',
+                                        text: '103 кв.м.',
+                                    },
+                                    {
+                                        icon: 'rooms',
+                                        text: '4-комн. и более',
+                                    },
+                                    {
+                                        icon: 'design',
+                                        text: 'Современный',
+                                    },
+                                ]
+                            }, {
+                                img: './static/images/content/portfolio-img-1.jpg',
+                                items: [
+                                    {
+                                        icon: 'marker',
+                                        text: 'г. Донецк ул. Пролетарская 71а',
+                                    },
+                                    {
+                                        icon: 'square',
+                                        text: '103 кв.м.',
+                                    },
+                                    {
+                                        icon: 'rooms',
+                                        text: '4-комн. и более',
+                                    },
+                                    {
+                                        icon: 'design',
+                                        text: 'Современный',
+                                    },
+                                ]
+                            }, {
+                                img: './static/images/content/portfolio-img-1.jpg',
+                                items: [
+                                    {
+                                        icon: 'marker',
+                                        text: 'г. Донецк ул. Пролетарская 71а',
+                                    },
+                                    {
+                                        icon: 'square',
+                                        text: '103 кв.м.',
+                                    },
+                                    {
+                                        icon: 'rooms',
+                                        text: '4-комн. и более',
+                                    },
+                                    {
+                                        icon: 'design',
+                                        text: 'Современный',
+                                    },
+                                ]
+                            }]
+                        each obj in portfolioSlides
+                            .swiper-slide
+                                .portfolio__card
+                                    .bg-elem.bg-elem_type_portfolio
+                                    img(src= obj.img).portfolio__img
+                                    .portfolio__info.portfolio-info
+                                        ul.portfolio-info__list
+                                            - for (let i = 0; i < obj.items.length; i++)
+                                                li.portfolio-info__item
+                                                    .portfolio-info__icon
+                                                        +icon(obj.items[i].icon)
+                                                    .portfolio-info__text= obj.items[i].text
+                                        .portfolio-info__descr Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                .portfolio-slider__btns-wrapp
+                    .swiper-button-prev.portfolio-slider__btn-prev
+                        +icon('slider-arrow-left')
+                    .swiper-button-next.portfolio-slider__btn-next
+                        +icon('slider-arrow-right')

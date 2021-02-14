@@ -1,0 +1,100 @@
+header { flex: 0 0 auto; }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #121814;
+  padding: 0 calc(1rem + 3.5vw);
+  z-index: 30;
+  max-width: 1920px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-right: -50%;
+  @include screen(500px) {
+    height: 70px;
+  }
+  @include screen(401) {
+    padding: 0 .5rem;
+  }
+  &__socials {
+    margin-left: calc(1rem + 2vw);
+    @include screen(501) {
+      margin-left: 0;
+    }
+  }
+  &__contacts {
+    color: $white;
+    flex-wrap: wrap;
+    margin: -.5rem -1rem;
+    flex: auto;
+    justify-content: space-between;
+    text-decoration: none;
+    flex-direction: row;
+    .svg-sprite-icon {
+      font-size: .8rem;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    margin-left: 10px;
+    white-space: nowrap;
+    @include screen(351) {
+      font-size: 12px;
+    }
+    &_size_small {
+      font-size: 14px;
+      @include screen(351) {
+        font-size: 12px;
+      }
+    }
+  }
+  &__top-panel {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.3rem;
+    @include border(1px, solid, #323232, bottom);
+    @include screen(1661) {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
+  &__content {
+    padding: 1rem calc(1rem + 3.3vw);
+    @include flex-center-column;
+    height: 100%;
+    flex: auto;
+    @include screen(501) {
+      padding: .5rem;
+    }
+  }
+  &__nav {
+    width: 100%;
+    padding-top: 1.3rem;
+    @include screen(1661) {
+      padding-top: 0;
+    }
+    .menu__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1rem;
+      justify-content: space-between;
+      @include screen(1661) {
+        flex-direction: column;
+      }
+    }
+    .menu__link {
+      font-weight: 500;
+    }
+  }
+  &__btns {
+    @include flex-center;
+  }
+  &__btn {
+    max-width: 250px;
+    padding: 1.1rem 3.5rem;
+  }
+}

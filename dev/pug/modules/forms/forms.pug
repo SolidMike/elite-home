@@ -1,0 +1,45 @@
+.form
+    .bg-elem.bg-elem_pos_bottom-right.bg-elem_size_lg
+    .form__title !{formTitle || 'Заполните заявку <br><span>и мы перезвоним вам</span>'}
+    form.form__body
+        +form_element({
+            type: 'text',
+            title: 'Ваше имя',
+            id: 'name',
+            placeholder: 'Анастасия'
+        })
+        +form_element({
+            type: 'text',
+            title: 'Ваш телефон',
+            id: 'phone',
+            placeholder: '+7 (000) 000-00-00'
+        })
+        +form_element({
+            type: 'textarea',
+            class_array: {
+                block_class_mod: 'form_cell_full_width'
+            },
+            title: 'Комментарий',
+            id: 'message',
+            placeholder: 'Ваш комментарий'
+        })
+        if formTitle
+            .form__rating.rating
+                input#starrating(type='number' name='starrating' max='5' min='1' value='5')
+                input#star5(type='radio' name='rating' value='5' checked='')
+                label.rating__star(for='star5')
+                input#star4(type='radio' name='rating' value='4')
+                label.rating__star(for='star4')
+                input#star3(type='radio' name='rating' value='3')
+                label.rating__star(for='star3')
+                input#star2(type='radio' name='rating' value='2')
+                label.rating__star(for='star2')
+                input#star1(type='radio' name='rating' value='1')
+                label.rating__star(for='star1')
+
+        -
+            const submitButton = {
+                label: 'Отправить',
+                size: 'size_md'
+            }
+        +c-button(submitButton)

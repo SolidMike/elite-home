@@ -1,0 +1,13 @@
+.portfolio-slider {
+  &__btn-next,
+  &__btn-prev {
+    position: initial;
+    margin: 0 .5rem;
+    transform: translate(0, 0);
+  }
+  &__btns-wrapp {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}

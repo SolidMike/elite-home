@@ -1,0 +1,109 @@
+header.header
+    .logo
+        a(href="/").logo__link
+            img(src="./static/images/general/logo.png").logo__img
+    .header__content
+        .header__top-panel
+            ul.contacts.header__contacts
+                -
+                    const contactsHeader = [
+                        {
+                            icon: 'phone',
+                            text: '071 310-21-85 Сергей',
+                            href: 'tel:0713102185',
+                            sandwich: 'contacts__item_mobile_sandwich'
+                        },
+                        {
+                            icon: 'phone',
+                            text: '071 385-71-37 Ирина',
+                            href: 'tel:0713857137',
+                            sandwich: 'contacts__item_mobile_sandwich'
+                        },
+                        {
+                            icon: 'calendar',
+                            text: 'с 8:00 до 17:00',
+                            href: '',
+                            mod: 'header__text_size_small'
+                        },
+                        {
+                            icon: 'marker2',
+                            text: 'г. Донецк ул. Пролетарская 71а',
+                            href: '',
+                            mod: 'header__text_size_small'
+                        },]
+                each obj in contactsHeader
+                    li.contacts__item(class= obj.sandwich)
+                        if obj.href
+                           a(href= obj.href).contacts__link
+                                .contacts__icon
+                                    +icon(obj.icon)
+                                .contacts__text.header__text= obj.text
+                        else
+                            .contacts__icon
+                                +icon(obj.icon)
+                            .contacts__text.header__text(class= obj.mod)= obj.text
+            .search
+                form(action="search" method="get").search__form
+                    input.search__input(id="search" value="" type="search" name="search" placeholder="Поиск")
+                    input.search__input(value="" type="hidden" name="id")
+                    button(type="submit").search__btn
+            ul.socials.header__socials
+                +socialLink('vk', '#')
+        .header__nav
+            -
+                var menuList = [
+                    {
+                        title: "Корпусная мебель",
+                        link: "#",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "Мягкая мебель",
+                        link: "./catalog.html",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "Шкафы",
+                        link: "#",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "Лестницы",
+                        link: "#",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "Искусственный камень",
+                        link: "#",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "Дизайн",
+                        link: "./design.html",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "О нас",
+                        link: "./about.html",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "Контакты",
+                        link: "./contacts.html",
+                        showFooter: true,
+                        subnav: []
+                    }, {
+                        title: "Блог",
+                        link: "./blog.html",
+                        showFooter: true,
+                        subnav: []
+                    }
+                ];
+            - var menuSelected = 'Контакты';
+            +menu(menuSelected)
+    .header__btns
+        +c-button({label: 'Заказать звонок', href: '#form-modal'})(class="header__btn modal-btn")
+        .sandwich(data-target-id="site-overlay" data-target-class-toggle="is-active")
+            .sandwich__line.sandwich__line--top
+            .sandwich__line.sandwich__line--middle
+            .sandwich__line.sandwich__line--bottom

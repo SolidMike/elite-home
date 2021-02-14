@@ -1,0 +1,37 @@
+extends template/secondary
+
+block variables
+    - var title = 'Страница товара'
+    - var pageClass = 'productPage'
+
+block content
+    .section.fp-auto-height
+        .section__wrapper
+            .section__container
+                ul.breadcrumbs
+                    +breadcrumbs-item('Главная','/')
+                    +breadcrumbs-item('Мягкая мебель','#')
+                    +breadcrumbs-item('Конкретный товар')
+                .section__content.section__content_transparent
+                    .title Конкретный товар (Заголовок)
+                    .product
+                        .product__inner
+                            .product__descr Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            .product__price 50 000 ₽
+                            +c-button({
+                                label: 'Заказать',
+                                href: '#form-modal',
+                                size: 'size_md',
+                                skin: 'type_cat modal-btn product__btn'
+                            })
+                        .product__slider
+                            .swiper-container.product-slider
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        .bg-elem.bg-elem_type_product
+                                        img(src="./static/images/content/single-product.jpg").product-slider__img
+                        .product-slider__controls
+                            .swiper-button-prev.product-slider__btn-prev
+                                +icon('slider-arrow-left')
+                            .swiper-button-next.product-slider__btn-next
+                                +icon('slider-arrow-right')

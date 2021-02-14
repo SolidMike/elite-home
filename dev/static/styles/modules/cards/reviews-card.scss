@@ -1,0 +1,51 @@
+.reviews-card {
+  padding: 2rem;
+  @include border(1px,solid,$gray,all);
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  &_margin_top {
+    margin-top: 30px;
+  }
+  &__author {
+    display: flex;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    @include border(1px,solid,$gray,bottom);
+    padding-bottom: 20px;
+    &_after {
+      position: relative;
+      &:after {
+        position: absolute;
+        content: '';
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 70%;
+        bottom: -2px;
+        right: 0;
+      }
+      @include screen(426) {
+        flex-direction: column;
+        &:after {
+          width: 0;
+        }
+      }
+    }
+  }
+  &__body {
+    padding-top: 20px;
+  }
+  &__name {
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  &__date {
+    margin-left: calc(1rem + 3vw);
+    color: #7A7A7A;
+    font-weight: 300;
+  }
+  &__rating {
+    pointer-events: none;
+  }
+}

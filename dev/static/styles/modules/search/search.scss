@@ -1,0 +1,45 @@
+
+.search {
+  position: relative;
+  font-size: 12px;
+  color: #848484;
+  max-width: 215px;
+  width: 100%;
+  margin-left: calc(1rem + 2vw);
+  @include flex-center;
+  @include screen(651) {
+    margin-left: 0;
+  }
+  &__form {
+    flex: auto;
+  }
+  &__input {
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $white;
+    width: 100%;
+    padding-left: .5rem;
+    color: $white;
+  }
+  &__btn {
+    position: absolute;
+    right: 10px;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    background: transparent url(../images/general/search.png) 50%/14px no-repeat;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    text-indent: -9999px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-bottom: -50%;
+  }
+  &__item {
+     a {
+      color: inherit;
+    }
+  }
+}

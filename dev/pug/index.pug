@@ -1,0 +1,253 @@
+extends template/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'homePage'
+
+block content
+	.section.fp-auto-height
+		.swiper-container.main-slider
+			.section__arrow-down
+				+icon('arrow-down')
+			.section__aside-title_right.section__aside-title.section__aside-title_first_screen Elite Home
+			.swiper-wrapper
+				-
+					const mainSlider = [{
+							img: './static/images/content/main-slider-1.jpg',
+							text: '<div class="main-slider__text main-slider__text_size_md">Добро пожаловать в магазин</div>\n' +
+									'<div class="main-slider__text main-slider__text_size_xl main-slider__text_gradient">elite home</div>\n',
+						},
+						{
+							img: './static/images/content/main-slider-2.jpg',
+							text: '<div class="main-slider__text">Дизайнер на дом</div>\n' +
+									'<div class="main-slider__text main-slider__text_size_lg main-slider__text_gradient">Магазин Elite Home у вас дома</div>\n' +
+									'<div class="main-slider__text">От идеи до готового интерьера</div>'
+						},
+						{
+							img: './static/images/content/main-slider-3.jpg',
+							text: '<div class="main-slider__text main-slider__text_size_xl main-slider__text_gradient">elite home</div>\n' +
+									'<div class="main-slider__text main-slider__text_size_md">- искусство создания элитной мебели</div>\n',
+						},
+						{
+							img: './static/images/content/main-slider-4.jpg',
+							text: '<div class="main-slider__text main-slider__text_size_xl main-slider__text_gradient">elite home</div>\n' +
+									'<div class="main-slider__text main-slider__text_size_md">- заботится о вашем комфорте</div>\n' +
+									'<div class="main-slider__text main-slider__text_size_sm">Приятно быть дома . Лучшее из известных  вам мест.</div>\n'
+						},
+						{
+							img: './static/images/content/main-slider-5.jpg',
+							text: '<div class="main-slider__text main-slider__text_size_xl main-slider__text_gradient">elite home</div>\n' +
+									'<div class="main-slider__text main-slider__text_size_md">- философия уюта</div>\n'
+						}]
+				each obj in mainSlider
+					.swiper-slide.main-slider__slide(style=`background: linear-gradient(rgba(18, 24, 20, 0.7), rgba(18, 24, 20, 0.7)), url(${obj.img}); background-repeat: no-repeat; background-size: cover;`)
+						.main-slider__content !{obj.text}
+							+c-button({label: 'Посмотреть наши работы', href: '#'})(class="main-slider__btn")
+			.swiper-pagination.main-slider__pagination
+	.section.categories.fp-auto-height
+		.section__wrapper.section__wrapper_img_right
+			.section__aside
+				.section__aside-title топ категорий
+			.section__img(style="background-image: url(./static/images/general/categories-section-img.jpg);")
+			.section__container
+				.section__content.section__content_size_md
+					.section__inner
+						.title Топ категорий
+						.section__grid
+							-
+								const types = [
+									{
+										icon: 'kitchen',
+										title: 'Кухонные гарнитуры',
+										href: '#',
+									},
+									{
+										icon: 'living-room',
+										title: 'Стенки для гостинной',
+										href: '#',
+									},
+									{
+										icon: 'hallway',
+										title: 'Прихожие',
+										href: '#',
+									},
+									{
+										icon: 'cabinet',
+										title: 'Шкафы',
+										href: '#',
+									},
+									{
+										icon: 'bedroom',
+										title: 'Спальные гарнитуры',
+										href: '#',
+									},
+									{
+										icon: 'fireplace',
+										title: 'Искусственный камень',
+										href: '#',
+									},
+									{
+										icon: 'stairs',
+										title: 'Лестницы',
+										href: '#',
+									},
+									{
+										icon: 'mirrors',
+										title: 'Зеркала',
+										href: '#',
+									},
+								]
+							each obj in types
+								a(href= obj.href).types-card
+									+icon(obj.icon)
+									.types-card__title= obj.title
+						+c-button({href: '#', label: 'Смотреть каталог'})(class="categories__btn")
+	.section.advantages.fp-auto-height
+		.section__wrapper
+			.section__container.advantages__container
+				.section__content.section__content_transparent
+					.title.advantages__title Наши преимущества
+					.cards-grid.advantages__grid
+						-
+							const advantages = [
+									{
+										icon: 'proffessionals',
+										title: 'Мы профессионалы',
+										descr: 'Мы знаем, как создать идеальную мебель для Вас. Более 25 лет обустраиваем дома, в которых уютно и комфортно жить, всегда приятно возвращаться , принимать гостей и строить планы.'
+									},
+									{
+										icon: 'production',
+										title: 'Собственное производство',
+										descr: 'Наличие современной производственной базы позволяет нам изготавливать различные предметы мебели по индивидуальным заказам. Если Вы планируете заказать несколько типов мебели, то мы выступаем, как единый исполнитель и наши дизайнеры создадут для вас единый проект интерьера.'
+									},
+									{
+										icon: 'quality',
+										title: 'Высокое качество продукции ',
+										descr: 'При производстве мебели наша компания использует сырье и комплектующие только зарекомендовавших себя производителей, все заказы выполняются на современном импортном оборудовании.'
+									},
+									{
+										icon: 'equality',
+										title: 'Все клиенты равны для нас',
+										descr: 'В нашем ценообразовании отсутствуют VIP-наценки и социальные скидки. Цена зависит только от себестоимости материалов, фурнитуры и сложности проекта, а качество обслуживания и мебели одинаково высокие для всех.'
+									},
+									{
+										icon: 'warranty',
+										title: 'Гарантия качества',
+										descr: 'Даём официальную гарантию на каждое изделие не менее чем на 1 год.'
+									},
+									{
+										icon: 'service',
+										title: 'Качественный сервис',
+										descr: 'Сборка и доставка мебели осуществляются опытными специалистами, готовые модули проходят контроль качества на производстве, что минимизирует любые погрешности.'
+									},
+							]
+						each obj in advantages
+							.advantages__card
+								.icon-wrapper
+									.bg-elem.bg-elem_size_sm.bg-elem_pos_top-left
+									.icon-wrapper__icon
+										+icon(obj.icon)
+								.advantages__card-title.card-title #{obj.title}
+								.advantages__card-descr #{obj.descr}
+	.section.fp-auto-height.reviews
+		.section__wrapper.section__wrapper_img_left.section__wrapper_bg_grey
+			.section__aside.section__aside_right
+				.section__aside-title.section__aside-title_right отзывы
+			.section__img.section__img_height_sm(style="background-image: url(./static/images/general/reviews-img.jpg);")
+			.section__container.reviews__container
+				.section__content.section__content_transparent
+					.title Отзывы
+					.swiper-container.reviews-slider
+						.swiper-wrapper
+							-
+								const reviewSlides = [{
+									name: 'Анастасия',
+									text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate .',
+									rating: 5,
+								},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure do Duis aute irure do Duis aute irure esse cillum dolore eu fugiat nulla pariatur.',
+										rating: 5,
+									},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation uea commodo consequat.',
+										rating: 5,
+									},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunre et dolore magna aliqua. Ut enim ad min exercitation ullamco laboris nisi ut.',
+										rating: 5,
+									},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+										rating: 5,
+										bgElem: 'bg-elem bg-elem_type_slider'
+									},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation is aute irure do Duis aute irure do Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+										rating: 5,
+									},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunre et dolore magna aliqua. Ut enim ad min exercitation ullamco laboris nisi ut.',
+										rating: 5,
+									},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+										rating: 5,
+										bgElem: 'bg-elem bg-elem_type_slider'
+									},
+									{
+										name: 'Анастасия',
+										text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation is aute irure do Duis aute irure do Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+										rating: 5,
+									},]
+							each obj in reviewSlides
+								.swiper-slide.reviews-slider__slide
+									div(class= obj.bgElem)
+									.reviews-card
+										.reviews-card__header
+											.reviews-card__name= obj.name
+											.reviews-card__rating.rating(data-star-value='')
+												input(type='radio' name='rating-5' readonly='' value='5')
+												label.rating__star
+												input(type='radio' name='rating-5' readonly='' value='4')
+												label.rating__star
+												input(type='radio' name='rating-5' readonly='' value='3')
+												label.rating__star
+												input(type='radio' name='rating-5' readonly='' value='2')
+												label.rating__star
+												input(type='radio' name='rating-5' readonly='' value='1')
+												label.rating__star
+										.reviews-card__body= obj.text
+					.swiper-button-prev.reviews-slider__btn-prev
+						+icon('slider-arrow-left')
+					.swiper-button-next.reviews-slider__btn-next
+						+icon('slider-arrow-right')
+	.section.fp-auto-height
+		.section__wrapper.section__wrapper_img_right
+			.section__aside
+				.section__aside-title сео-текст
+			.section__img(style="background-image: url(./static/images/general/seo-img.jpg);")
+			.section__container
+				.section__content.section__content_size_sm
+					.section__inner
+						.title Сео-текст
+						.section__text.section__text_size_sm  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	.section.fp-auto-height
+		.section__wrapper.section__wrapper_img_left.section__wrapper_bg_grey
+			.section__aside.section__aside_right
+				.section__aside-title.section__aside-title_right отзывы
+			.section__img.section__img_height_sm(style="background-image: url(./static/images/general/home-form-section-img.jpg);")
+			.section__container
+				include ./modules/forms/forms
+		include ./modules/footer/footer
+
+
+

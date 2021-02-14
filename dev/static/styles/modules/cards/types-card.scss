@@ -1,0 +1,20 @@
+.types-card {
+  @include border(1px, solid, $gray, all);
+  @include flex-center-column;
+  text-decoration: none;
+  color: initial;
+  padding: 14px;
+  transition: all .3s;
+  &:hover {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  &__title {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  .svg-sprite-icon {
+    font-size: 2.8rem;
+  }
+}

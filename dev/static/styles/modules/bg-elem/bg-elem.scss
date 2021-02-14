@@ -1,0 +1,89 @@
+
+.bg-elem {
+  background-color: #B6B6B6;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  @include box(110px);
+  &:before {
+    position: absolute;
+    transform: matrix(1, -1.36, 0.04, 0.78, 0, 0);
+    background-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.7) 50.52%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    width: 100%;
+  }
+  &_size_sm {
+    height: 85%;
+    width: 85%;
+  }
+  &_pos_top-left {
+    left: -20px;
+    top: -20px;
+    &:before {
+      left: -10px;
+      top: -10px;
+    }
+  }
+  &_size_md {
+    width: 30%;
+    height: 100%;
+  }
+  &_pos_top-right {
+    right: -30px;
+    top: -30px;
+    &:before {
+      right: -15px;
+      top: -15px;
+    }
+  }
+  &_pos_bottom-right {
+    right: -30px;
+    bottom: -30px;
+    &:before {
+      right: -15px;
+      bottom: -15px;
+    }
+  }
+  &_size_lg {
+    @include box(410px, 330px);
+  }
+  &_type_cat {
+    top: -30px;
+    right: -30px;
+    @include box(340px, 275px);
+    &:before {
+      right: -15px;
+      bottom: -15px;
+    }
+  }
+  &_type_slider {
+    right: -30px;
+    bottom: 0;
+    height: 90%;
+    width: 100%;
+    @include screen(901) {
+      right: -20px;
+    }
+    &:before {
+      right: -15px;
+      bottom: 0;
+      @include screen(901) {
+        right: -10px;
+      }
+    }
+  }
+  &_type_portfolio {
+    left: 0;
+    top: 0;
+    @include box(410px, 330px);
+    @include screen(550px) {
+      display: none;
+    }
+  }
+  &_type_product {
+    right: 0;
+    top: 0;
+    @include box(340px, 275px);
+  }
+}

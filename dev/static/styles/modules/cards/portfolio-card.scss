@@ -1,0 +1,58 @@
+.portfolio {
+  &__card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 0 2rem;
+    @include screen(769) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__img {
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 30px;
+    @include screen(550px) {
+      padding: 0;
+    }
+  }
+}
+
+
+.portfolio-info {
+  @include flex-center-vert-column;
+  &__list {
+    @include screen(769) {
+      margin-top: .5rem;
+    }
+  }
+  &__item {
+    margin-top: 2.5rem;
+    @include flex-center-vert;
+    &:first-child {
+      margin-top: 0;
+    }
+    @include screen(769) {
+      margin-top: .5rem;
+    }
+  }
+  &__text {
+    margin-left: 1.5rem;
+    @include font-size(18, 21px);
+    color: $black;
+  }
+  &__btn {
+    margin-top: calc(1rem + 2.5vw);
+    max-width: 300px;
+    padding: 1.1rem 3.5rem;
+  }
+  &__descr {
+    margin-top: calc(1rem + 2.5vw);
+    max-height: 100px;
+    overflow: hidden;
+  }
+  &__icon {
+    .svg-sprite-icon {
+      font-size: 1.7rem;
+    }
+  }
+}

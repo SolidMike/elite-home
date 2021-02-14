@@ -1,0 +1,57 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(280px + 2vw), 1fr));
+  grid-gap: 30px;
+  max-width: calc(#{$content-size} + 2rem);
+  width: 100%;
+  position: relative;
+}
+
+.card {
+  @include border(1px, solid, $gray, all);
+  @include flex-column;
+  transition: all .3s;
+  background-color: $white;
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  &__inner {
+    padding: 30px;
+    @include flex-column;
+    flex: auto;
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__img {
+    height: 285px;
+    width: 100%;
+    object-fit: contain;
+  }
+  &__title {
+    padding-bottom: 18px;
+  }
+  &__descr {
+    padding: 15px 0;
+    @include border(1px, solid, $gray, top);
+    flex: auto;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  &__price {
+    @include fluid-type($min-width, $max-width, 18px, 25px);
+    @include border(1px, solid, $gray, top);
+    font-weight: 800;
+    padding-top: 20px;
+  }
+  .c-button {
+    margin-top: 2.5rem;
+  }
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}

@@ -1,0 +1,44 @@
+.menu {
+  &__item {
+    &.active {
+      & > .menu__link {
+        &:after {
+          content: '';
+          position: absolute;
+          height: 3px;
+          background: $white;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  &__link {
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .5rem;
+    display: block;
+    white-space: nowrap;
+    position: relative;
+    @include screen(600px) {
+      white-space: normal;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      background: $white;
+      width: 0;
+      transition: all .4s;
+      left: 0;
+      bottom: 0;
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}

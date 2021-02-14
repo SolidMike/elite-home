@@ -1,0 +1,25 @@
+.design {
+  &__main-screen {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+  .breadcrumbs {
+    top: 170px;
+    max-width: 1300px;
+    width: 100%;
+    z-index: 10;
+    left:50%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+  }
+  .breadcrumbs__text,
+  .breadcrumbs__link {
+    color: $white;
+  }
+  .breadcrumbs__item {
+    &:after {
+      color: $white;
+    }
+  }
+}

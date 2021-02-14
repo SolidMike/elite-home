@@ -1,0 +1,25 @@
+.form#form-modal
+    .form__title !{formTitle || 'Заполните заявку <br><span>и мы перезвоним вам</span>'}
+    form.form__body
+        +form_element({
+            type: 'text',
+            title: 'Ваше имя',
+            id: 'name',
+            placeholder: 'Анастасия'
+        })
+        +form_element({
+            type: 'text',
+            title: 'Ваш телефон',
+            id: 'phone',
+            placeholder: '+7 (000) 000-00-00'
+        })
+        +form_element({
+            type: 'textarea',
+            class_array: {
+                block_class_mod: 'form_cell_full_width'
+            },
+            title: 'Комментарий',
+            id: 'message',
+            placeholder: 'Ваш комментарий'
+        })
+        +c-button({label: 'Отправить', size: 'size_md'})

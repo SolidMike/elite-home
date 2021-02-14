@@ -1,0 +1,41 @@
+//- Button 1.1
+//- 1.1: Added disabled state
+mixin c-button(options, attributes)
+  - var DEFAULT_OPTIONS = {};
+  - DEFAULT_OPTIONS.label = 'Button label' // string
+  - DEFAULT_OPTIONS.skin = 'default' // string
+  - DEFAULT_OPTIONS.size = false // string
+  - DEFAULT_OPTIONS.href = false // string
+  - DEFAULT_OPTIONS.icon = false // object
+  - DEFAULT_OPTIONS.disabled = false // boolean
+  - DEFAULT_OPTIONS.iconPosition = 'left' // can be {left, right}
+
+  //- Options that shouldn't be used
+  - DEFAULT_OPTIONS.variant = false // string
+
+  - options = Object.assign({}, DEFAULT_OPTIONS, options || {});
+  
+  mixin c-button-content
+      if options.icon && !options.iconPosition || options.icon && options.iconPosition == "left"
+          +icon(options.icon.name, options.icon.mod)
+          span.c-button__label= options.label
+      if options.icon && options.iconPosition == "right"
+          span.c-button__label= options.label
+          +icon(options.icon.name, options.icon.mod)
+      if !options.icon
+          span.c-button__label= options.label
+      block
+
+  if options.variant
+      | Error: please use skin to denote button variants
+
+  if options.disabled && !options.href
+       button.c-button( class=`${ options.size ? "c-button--" + options.size : ""} ${ "c-button--" + options.skin}` type="button" disabled)
+           +c-button-content
+  else
+      if options.href
+          a.c-button(class=`${ options.size ? "c-button--" + options.size : ""} ${ options.disabled ? "c-button--disabled" : ""} ${ options.skin ? "c-button--" + options.skin : ""}` href=options.href)
+              +c-button-content
+      if !options.href
+          button.c-button( class=`${ options.size ? "c-button--" + options.size : ""} ${ "c-button--" + options.skin}` type="button")
+              +c-button-content

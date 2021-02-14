@@ -1,0 +1,55 @@
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 30px;
+  grid-auto-flow: dense;
+  &__link {
+    display: contents;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    &_size_xl {
+      grid-column: span 3;
+      grid-row: span 3;
+      @include screen(1100) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      @include screen(830) {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      @include screen(600) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+    &_size_lg {
+      grid-column: span 2;
+      grid-row: span 2;
+      @include screen(1100) {
+        grid-column: span 3;
+      }
+      @include screen(830) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      @include screen(600) {
+        grid-column: span 1;
+      }
+    }
+    &_size_md {
+      grid-column: span 2;
+      @include screen(830) {
+        grid-row: span 1;
+        height: auto;
+      }
+      @include screen(600) {
+        grid-column: span 1;
+        height: 200px;
+      }
+    }
+  }
+}

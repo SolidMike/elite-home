@@ -1,0 +1,70 @@
+
+.main-slider {
+  height: 100vh;
+  @include screen(600px) {
+    height: 500px;
+  }
+  &__content {
+    position: absolute;
+    max-width: 780px;
+    z-index: 10;
+    top:33%;
+    left: 17%;
+    @include screen(601) {
+      left: 1rem;
+    }
+  }
+  &__text {
+    @include fluid-type($min-width, $max-width, $min-font-size: 16px, $max-font-size: 30px);
+    font-weight: 800;
+    color: $white;
+    &_size_sm {
+      @include fluid-type($min-width, $max-width, $min-font-size: 14px, $max-font-size: 20px);
+    }
+    &_size_md {
+      @include fluid-type($min-width, $max-width, $min-font-size: 18px, $max-font-size: 50px);
+      font-weight: 800;
+    }
+    &_size_lg {
+      @include fluid-type($min-width, $max-width, $min-font-size: 22px, $max-font-size: 70px);
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    &_size_xl {
+      @include fluid-type($min-width, $max-width, $min-font-size: 26px, $max-font-size: 90px);
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    &_gradient {
+      background: linear-gradient(261.08deg, #848484 4.48%, rgba(255, 255, 255, 0) 33.81%),
+      linear-gradient(77.17deg, #959595 2.34%, rgba(71, 71, 71, 0) 18.36%),
+      linear-gradient(0deg, #FFFFFF, #FFFFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__btn {
+    margin-top: calc(2rem + 3vw);
+    @include screen(601) {
+      padding: 1.1rem 2rem;
+    }
+  }
+  &__pagination {
+    top: 80%;
+    left: 17%!important;
+    width: auto!important;
+    @include screen(601) {
+      left: .5rem;
+    }
+    .swiper-pagination-bullet {
+      width: 21px;
+      border-radius: 0;
+      height: 2px;
+      background-color: #fff;
+      transition: all .3s;
+      &-active {
+        height: 4px;
+      }
+    }
+  }
+}

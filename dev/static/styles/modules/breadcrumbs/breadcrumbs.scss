@@ -1,0 +1,37 @@
+.breadcrumbs {
+  @include screen(768px) {
+    flex-wrap: wrap;
+    line-height: 1.1;
+  }
+  @include screen(500px) {
+    top: 0;
+  }
+  list-style: none;
+  display: flex;
+  padding-left: .5rem;
+  position: absolute;
+  top: 20px;
+  max-width: 1300px;
+  & > * {
+    &:not(:last-child) { margin-right: 20px; }
+  }
+  &__item {
+    @include screen(768px) {
+      white-space: normal;
+    }
+    white-space: nowrap;
+    position: relative;
+    &:not(:last-child) {
+      &:after {
+        @include pseudo($width: 10px, $content: '>');
+        right: -15px;
+      }
+    }
+  }
+  &__link,
+  &__text {
+    text-decoration: none;
+    @include font-size(14, 16px);
+    color: $text;
+  }
+}

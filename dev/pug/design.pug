@@ -1,0 +1,55 @@
+extends template/main
+
+block variables
+    - var title = 'Дизайн'
+    - var pageClass = 'designPage'
+
+block content
+    .section.fp-auto-height.design
+        ul.breadcrumbs
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Дизайн')
+        .design__main-screen(style=`background: linear-gradient(rgba(18, 24, 20, 0.3), rgba(18, 24, 20, 0.3)), url(./static/images/general/design-main-screen-img.jpg); background-repeat: no-repeat; background-size: cover;`)
+            .section__arrow-down
+                +icon('arrow-down')
+            .section__aside-title_right.section__aside-title.section__aside-title_first_screen elite home
+    .section.fp-auto-height
+        .section__wrapper
+            .section__aside-title Дизайн
+            .section__container
+                .section__content.section__content_transparent
+                    .title Дизайн
+                    .mosaic-grid
+                        a(href="./static/images/content/mosaic-img-sm-1.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-1.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-xl-4.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-xl-4.jpg").mosaic-grid__img.mosaic-grid__img_size_xl
+                        a(href="./static/images/content/mosaic-img-xl-4.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-2.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-sm-3.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-3.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-sm-5.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-5.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-sm-6.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-6.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-sm-7.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-7.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-sm-8.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-8.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-md-9.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-md-9.jpg").mosaic-grid__img.mosaic-grid__img_size_md
+                        a(href="./static/images/content/mosaic-img-lg-10.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-lg-10.jpg").mosaic-grid__img.mosaic-grid__img_size_lg
+                        a(href="./static/images/content/mosaic-img-sm-11.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-11.jpg").mosaic-grid__img
+                        a(href="./static/images/content/mosaic-img-sm-12.jpg" data-fancybox="gallery").mosaic-grid__link
+                            img(src="./static/images/content/mosaic-img-sm-12.jpg").mosaic-grid__img
+    include ./pages/design/portfolio-slider
+    .section.fp-auto-height
+        .section__wrapper.section__wrapper_img_left
+            .section__aside.section__aside_right
+                .section__aside-title.section__aside-title_right Напишите нам
+            .section__img.section__img_height_sm(style="background-image: url(./static/images/general/home-form-section-img.jpg);")
+            .section__container
+                include ./modules/forms/forms
+        include ./modules/footer/footer

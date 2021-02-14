@@ -1,0 +1,20 @@
+.socials {
+  align-items: center;
+  display: flex;
+  & > * {
+    &:not(:last-child) { margin-right: 15px; }
+  }
+  &__link {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  &__icon {
+    width: 1.65em;
+    fill: $white;
+    font-size: 1.3rem;
+  }
+  &__item {
+    padding: .25rem .5rem;
+  }
+}

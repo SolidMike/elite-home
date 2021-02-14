@@ -1,0 +1,58 @@
+footer.footer
+    span.footer__devider-line
+    .footer__left-side
+        .footer__col
+            .logo.footer__logo
+                a(href="/").logo__link
+                    img(src="./static/images/general/logo.png").logo__img
+        ul.contacts.footer__contacts.footer__col
+            li.contacts__item
+                a(href="tel:0713102185").contacts__link
+                    .contacts__icon
+                        +icon('phone')
+                    .contacts__text.footer__text 071 #[span 310-21-85] Сергей
+            li.contacts__item
+                a(href="tel:0713857137").contacts__link
+                    .contacts__icon
+                        +icon('phone')
+                    .contacts__text.footer__text 071 #[span 385-71-37] Ирина
+            ul.socials.footer__socials
+                +socialLink('vk', '#')
+        ul.footer__contacts.contacts.footer__col
+            li.contacts__item
+                .contacts__icon
+                    +icon('calendar')
+                .contacts__text.footer__text.footer__text_size_small с 8:00 до 17:00
+            li.contacts__item
+                a(href="mailto:emailcompany@email.ru").contacts__link
+                    .contacts__icon
+                        +icon('envelope')
+                    .contacts__text.footer__text.footer__text_size_small emailcompany@email.ru
+            li.contacts__item
+                .contacts__icon
+                    +icon('marker2')
+                .contacts__text.footer__text.footer__text_size_small г. Донецк ул. Пролетарская 71а
+    .footer__right-side
+        .footer__nav
+            nav.menu
+                ul.menu__list
+                    li.menu__item
+                        a.menu__link(href='#') Корпусная мебель
+                    li.menu__item
+                        a.menu__link(href='catalog.html') Мягкая мебель
+                    li.menu__item
+                        a.menu__link(href='#') Шкафы
+                    li.menu__item
+                        a.menu__link(href='#') Лестницы
+                    li.menu__item
+                        a.menu__link(href='#') Искусственный камень
+                    li.menu__item
+                        a.menu__link(href='./design.html') Дизайн
+                    li.menu__item
+                        a.menu__link(href='./about.html') О нас
+                    li.menu__item.active
+                        a.menu__link(href='./contacts.html') Контакты
+                    li.menu__item
+                        a.menu__link(href='./blog.html') Блог
+    .footer__bottom
+        .footer__copyright © Elite home, 2020
